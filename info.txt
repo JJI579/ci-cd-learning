@@ -1,0 +1,4 @@
+I am to learn how to:
+	1. Use docker containers and compose to set up and build images
+	2. Use jenkins to technically test and deploy these.
+	3. archive the build into the build artifacts
