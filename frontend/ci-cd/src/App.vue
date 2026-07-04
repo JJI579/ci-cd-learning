@@ -1,11 +1,31 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+
+
+const text = ref("Waiting...");
+async function fetchName() {
+  const resp = await fetch("http://127.0.0.1:8000")
+  text.value = (await resp.json()).text
+}
+
+onMounted(() => {
+  fetchName()
+})
+
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  
+  <div class="center">
+    <h1>Who do you want to say hello to!</h1>
+    <p>
+      {{ text }}
+    </p>
+    <button @click="fetchName">New person!</button>
+  </div>
+  
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
