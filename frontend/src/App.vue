@@ -4,7 +4,7 @@ import { onMounted, ref } from 'vue';
 
 const text = ref("Waiting...");
 async function fetchName() {
-  const resp = await fetch("http://127.0.0.1:8000")
+  const resp = await fetch("http://localhost:8000")
   text.value = (await resp.json()).text
 }
 

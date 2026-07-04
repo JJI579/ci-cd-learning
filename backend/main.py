@@ -9,7 +9,7 @@ names = [x.strip() for x in open('names.txt').readlines()]
 # Adding CORS to allow cross-origin requests
 
 
-origins = ["http://localhost:8080", "http://localhost:5173"]  # List of allowed origins
+origins = ["*"]  # List of allowed origins
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,3 +24,4 @@ async def index():
 	return {
 		"text": f"Hello {random.choice(names)}!"
 	}
+
